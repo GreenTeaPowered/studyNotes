@@ -126,3 +126,75 @@ If you click on Groups, you see all the names of the local groups along with a b
 Each group has permissions set to it, and users are assigned/added to groups by the Administrator. When a user is assigned to a group, the user inherits the permissions of that group. A user can be assigned to multiple groups.
 
 Note: If you click on Add someone else to this PC from Other users, it will open Local Users and Management.
+
+## 04 - User Account Control
+
+The large majority of home users are logged into their Windows systems as local administrators. Remember from the previous task that any user with administrator as the account type can make changes to the system.
+
+A user doesn't need to run with high (elevated) privileges on the system to run tasks that don't require such privileges, such as surfing the Internet, working on a Word document, etc. This elevated privilege increases the risk of system compromise because it makes it easier for malware to infect the system. Consequently, since the user account can make changes to the system, the malware would run in the context of the logged-in user.
+
+To protect the local user with such privileges, Microsoft introduced User Account Control (UAC). This concept was first introduced with the short-lived Windows Vista and continued with versions of Windows that followed.
+
+Note : UAC (by default) doesn't apply for the built-in local administrator account.
+
+How does UAC work? When a user with an account type of administrator logs into a system, the current session doesn't run with elevated permissions. When an operation requiring higher-level privileges needs to execute, the user will be prompted to confirm if they permit the operation to run.
+
+Let's look at the program on the account you're currently logged into, the built-in administrator account—Right-click to view its Properties.
+
+In the Security tab, we can see the users/groups and their permissions to this file. Notice that the standard user is not listed.
+
+Log in as the standard user and try to install this program. To do this, you can remote desktop into the machine as the standard user account.
+
+Note : You have the username and password for the standard user. It's visible in lusrmgr.msc .
+
+Before installing the program, notice the icon. Do you see the difference? When you're logged in as the standard user, the shield icon is on the program's default icon. See below.
+
+This shield icon is an indicator that UAC will prompt to allow higher-level privileges to install the program.
+
+Double-click the program, and you'll see the UAC prompt. Notice that the built-in administrator account is already set as the user name and prompts the account's password. See below.
+
+After some time, if a password is not entered, the UAC prompt disappears, and the program does not install.
+
+This feature reduces the likelihood of malware successfully compromising your system. You can read more about UAC here.
+
+## 05 - Settings And The Control Panel
+
+On a Windows system, the primary locations to make changes are the Settings menu and the Control Panel.
+
+For a long time, the Control Panel has been the go-to location to make system changes, such as adding a printer, uninstall a program, etc.
+
+The Settings menu was introduced in Windows 8, the first Windows operating system catered to touch screen tablets, and is still available in Windows 10. As a matter of fact, the Settings menu is now the primary location a user goes to if they are looking to change the system.
+
+There are similarities and differences between the two menus. Below are screenshots of each.
+
+Note : The icons for Settings might be different in the version of Windows on your personal device.
+
+Both can be accessed from the Start Menu. See below.
+
+Control Panel is the menu where you will access more complex settings and perform more complex actions. In some cases, you can start in Settings and end up in the Control Panel.
+
+For example, in Settings, click on Network & Internet . From here, click on Change adapter options .
+
+Notice that the next window that pops up is from the Control Panel.
+
+If you're unclear which to open if you wish to change a setting, use the Start menu and search for it.
+
+In the example below, the search was 'wallpaper.' Notice that few results were returned.
+
+If we click on the Best match, a window to the Settings menu appears to make changes to the wallpaper.
+
+## 06 - Task Manager
+
+The last subject that will be touched on in this module is the Task Manager.
+
+The Task Manager provides information about the applications and processes currently running on the system. Other information is also available, such as how much CPU and RAM are being utilized, which falls under Performance.
+
+You can access the Task Manager by right-clicking the taskbar.
+
+Task Manager will open in Simple View and won't show much information.
+
+Click on More details, and the view changes.
+
+You can refer to this blog post for more detailed information about the Task Manager.
+
+If you wish to learn more about the core Windows processes and what each process is responsible for, visit the Core Windows Processes room.
