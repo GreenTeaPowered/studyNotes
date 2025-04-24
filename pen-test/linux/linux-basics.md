@@ -62,9 +62,9 @@ What is useful in pen-testing is that any user can write to this folder by defau
 
 Download files from the internet via http(s)
 
-When using the commands as shown below, _curl_ will only grab the contents of the url.
+When using the commands as shown below, **curl** will only grab the contents of the url.
 So if this is a text file for example, it will only grab the content and display it in your terminal.
-Where as _wget_ will actually download the file to your current directory.
+Where as **wget** will actually download the file to your current directory.
 
 `wget "url"`
 
@@ -97,9 +97,9 @@ And the example below will show the reverse:
 
 ### Serving Files From Your Host - WEB
 
-Ubuntu machines come pre-packaged with _python3_. Python helpfully provides a lightweight and easy-to-use module called _"HTTPServer"_. This module turns your computer into a quick and easy web server that you can use to serve your own files, where they can then be downloaded by another computing using commands such as _curl_ and _wget_.
+Ubuntu machines come pre-packaged with **python3**. Python helpfully provides a lightweight and easy-to-use module called **"HTTPServer"**. This module turns your computer into a quick and easy web server that you can use to serve your own files, where they can then be downloaded by another computing using commands such as **curl** and **wget**.
 
-_Python3's "HTTPServer"_ will serve the files in the directory where you run the command, but this can be changed by providing options that can be found within the manual pages. Simply, all we need to do is run `python3 -m  http.server`.
+**Python3's "HTTPServer"** will serve the files in the directory where you run the command, but this can be changed by providing options that can be found within the manual pages. Simply, all we need to do is run `python3 -m  http.server`.
 
 ## 04 - Processes 101
 
@@ -115,11 +115,11 @@ o see the processes run by other users and those that don't run from a session (
 
 ### TOP
 
-Another very useful command is the `top` command. _top_ gives you real-time statistics about the processes running on your system instead of a one-time view. These statistics will refresh every 10 seconds, but will also refresh when you use the arrow keys to browse the various rows. Another great command to gain insight into your system is via the _top_ command.
+Another very useful command is the `top` command. **top** gives you real-time statistics about the processes running on your system instead of a one-time view. These statistics will refresh every 10 seconds, but will also refresh when you use the arrow keys to browse the various rows. Another great command to gain insight into your system is via the **top** command.
 
 ### KILL
 
-You can send signals that terminate processes. There are a variety of types of signals that correlate to exactly how "cleanly" the process is dealt with by the kernel. To _kill_ a command, we can use the appropriately named `kill` command and the associated _PID_ that we wish to kill. i.e., to kill _PID_ 1337, we'd use `kill 1337`.
+You can send signals that terminate processes. There are a variety of types of signals that correlate to exactly how "cleanly" the process is dealt with by the kernel. To **kill** a command, we can use the appropriately named `kill` command and the associated **PID** that we wish to kill. i.e., to kill **PID** 1337, we'd use `kill 1337`.
 
 Below are some of the signals that we can send to a process when it is killed:
 
@@ -133,9 +133,9 @@ Let's start off by talking about namespaces. The Operating System (OS) uses name
 
 Namespaces are great for security as it is a way of isolating processes from another -- only those that are in the same namespace will be able to see each other.
 
-We previously talked about how PID works, and this is where it comes into play. The process with an ID of 0 is a process that is started when the system boots. This process is the system's init on Ubuntu, such as _systemd_, which is used to provide a way of managing a user's processes and sits in between the operating system and the user.
+We previously talked about how PID works, and this is where it comes into play. The process with an ID of 0 is a process that is started when the system boots. This process is the system's init on Ubuntu, such as **systemd**, which is used to provide a way of managing a user's processes and sits in between the operating system and the user.
 
-For example, once a system boots and it initialises, _systemd_ is one of the first processes that are started. Any program or piece of software that we want to start will start as what's known as a child process of _systemd_. This means that it is controlled by _systemd_, but will run as its own process (although sharing the resources from _systemd_) to make it easier for us to identify and the likes.
+For example, once a system boots and it initialises, **systemd** is one of the first processes that are started. Any program or piece of software that we want to start will start as what's known as a child process of **systemd**. This means that it is controlled by **systemd**, but will run as its own process (although sharing the resources from **systemd**) to make it easier for us to identify and the likes.
 
 ### Systemctl
 
@@ -143,13 +143,13 @@ Some applications can be started on the boot of the system that we own. For exam
 
 In this example, we're going to be telling the apache web server to be starting apache manually and then telling the system to launch apache2 on boot.
 
-Enter the use of _systemctl_ -- this command allows us to interact with the _systemd_ process/daemon. Continuing on with our example, _systemctl_ is an easy to use command that takes the following formatting:
+Enter the use of **systemctl** -- this command allows us to interact with the **systemd** process/daemon. Continuing on with our example, **systemctl** is an easy to use command that takes the following formatting:
 
 `systemctl [option] [service]`
 
 For example, to tell apache to start up, we'll use `systemctl start apache2`. Seems simple enough, right? Same with if we wanted to stop apache, we'd just replace the [option] with stop (instead of start like we provided)
 
-We can do four options with _systemctl_:
+We can do four options with **systemctl**:
 
 - Start
 - Stop
@@ -158,20 +158,20 @@ We can do four options with _systemctl_:
 
 ### Processes In For or Background
 
-Processes can run in two states: In the background and in the foreground. For example, commands that you run in your terminal such as _"echo"_ or things of that sort will run in the foreground of your terminal as it is the only command provided that hasn't been told to run in the background. _"Echo"_ is a great example as the output of echo will return to you in the foreground.
+Processes can run in two states: In the background and in the foreground. For example, commands that you run in your terminal such as **"echo"** or things of that sort will run in the foreground of your terminal as it is the only command provided that hasn't been told to run in the background. **"Echo"** is a great example as the output of echo will return to you in the foreground.
 
-But if we want to run a program in the background so we can still use our current terminal without it be locked/frozen we can add the _&_ to the command.
-An example of this would be to open up a browser window like _firefox_, if you run this application in the terminal. The process for running the program will take control or lock up your current terminal session as it is active in the foreground. If we do the following command:
+But if we want to run a program in the background so we can still use our current terminal without it be locked/frozen we can add the **&** to the command.
+An example of this would be to open up a browser window like **firefox**, if you run this application in the terminal. The process for running the program will take control or lock up your current terminal session as it is active in the foreground. If we do the following command:
 
 `firefox &`
 
 It will still be tied to your current terminal session, but it will be assigned a PID and run in the background, so you can still freely use your current terminal session.
 
-If you want to _disown_ the process from your current terminal session you can also add the _disown_ keyword after the _&_, like so:
+If you want to **disown** the process from your current terminal session you can also add the **disown** keyword after the **&**, like so:
 
 `firefox & disown`
 
-If you would kill your terminal session, your _firefox_ process will keep running as well.
+If you would kill your terminal session, your **firefox** process will keep running as well.
 
 ### Return To Foreground
 
@@ -183,7 +183,7 @@ To bring a background process back to the foreground you can use the following c
 
 Users may want to schedule a certain action or task to take place after the system has booted. Take, for example, running commands, backing up files, or launching your favourite programs on, such as Spotify or Google Chrome.
 
-We're going to be talking about the _cron_ process, but more specifically, how we can interact with it via the use of _crontabs_. _Crontab_ is one of the processes that is started during boot, which is responsible for facilitating and managing cron jobs.
+We're going to be talking about the **cron** process, but more specifically, how we can interact with it via the use of **crontabs**. **Crontab** is one of the processes that is started during boot, which is responsible for facilitating and managing cron jobs.
 
 A crontab is simply a special file with formatting that is recognised by the cron process to execute each line step-by-step. Crontabs require 6 specific values:
 
@@ -198,17 +198,17 @@ Let's use the example of backing up files. You may wish to backup "cmnatic"'s "D
 
 `0 */12 * * * cp -R /home/cmnatic/Documents /var/backups/`
 
-An interesting feature of _crontabs_ is that these also support the _wildcard_ or asterisk (\*). If we do not wish to provide a value for that specific field, i.e. we don't care what month, day, or year it is executed -- only that it is executed every 12 hours, we simply just place an asterisk.
+An interesting feature of **crontabs** is that these also support the **wildcard** or asterisk (\*). If we do not wish to provide a value for that specific field, i.e. we don't care what month, day, or year it is executed -- only that it is executed every 12 hours, we simply just place an asterisk.
 
 This can be confusing to begin with, which is why there are some great resources such as the online "Crontab Generator" that allows you to use a friendly application to generate your formatting for you! As well as the site "Cron Guru"!
 
-_Crontabs_ can be edited by using `crontab -e`, where you can select an editor (such as Nano) to edit your _crontab_.
+**Crontabs** can be edited by using `crontab -e`, where you can select an editor (such as Nano) to edit your **crontab**.
 
 ## 07 - Maintaining Your System: Package Management
 
 When developers wish to submit software to the community, they will submit it to an "apt" repository. If approved, their programs and tools will be released into the wild. Two of the most redeeming features of Linux shine to light here: User accessibility and the merit of open source tools.
 
-When using the `ls` command in the _/etc/apt/_ directory, on a Ubuntu 20.04 Linux machine, these files serve as the gateway/registry.
+When using the `ls` command in the **/etc/apt/** directory, on a Ubuntu 20.04 Linux machine, these files serve as the gateway/registry.
 
 Whilst Operating System vendors will maintain their own repositories, you can also add community repositories to your list! This allows you to extend the capabilities of your OS. Additional repositories can be added by using the `add-apt-repositorycommand` or by listing another provider! For example, some vendors will have a repository that is closer to their geographical location.
 
@@ -240,7 +240,7 @@ Example of this process would look like this:
 
 2.4 - Once successfully updated, we can now proceed to install the software that we have trusted and added to apt using `apt install sublime-text`
 
-Removing packages is as easy as reversing. This process is done by using the `add-apt-repository --remove ppa:PPA_Name/ppa` command or by manually deleting the file that we previously added to. Once removed, we can just use `apt remove [software-name-here]` i.e. `apt remove sublime-text`
+Removing packages is as easy as reversing. This process is done by using the `add-apt-repository --remove ppa:PPA**Name/ppa` command or by manually deleting the file that we previously added to. Once removed, we can just use `apt remove [software-name-here]` i.e. `apt remove sublime-text`
 
 ## 08 - Maintaining Your System: Logs
 

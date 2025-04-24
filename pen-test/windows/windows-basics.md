@@ -2,9 +2,9 @@
 
 ## 01 -The File System
 
-he file system used in modern versions of Windows is _the New Technology File System or simply NTFS_.
+he file system used in modern versions of Windows is **the New Technology File System or simply NTFS**.
 
-Before NTFS, there was _FAT16/FAT32_ (File Allocation Table) and _HPFS_ (High Performance File System).
+Before NTFS, there was **FAT16/FAT32** (File Allocation Table) and **HPFS** (High Performance File System).
 
 You still see FAT partitions in use today. For example, you typically see FAT partitions in USB devices, MicroSD cards, etc. but traditionally not on personal Windows computers/laptops or Windows servers.
 
@@ -15,7 +15,7 @@ NTFS addresses many of the limitations of the previous file systems; such as:
 - Supports files larger than 4GB
 - Set specific permissions on folders and files
 - Folder and file compression
-- Encryption ( Encryption File System or _EFS_ )
+- Encryption ( Encryption File System or **EFS** )
 
 If you're running Windows, what is the file system your Windows installation is using? You can check the Properties (right-click) of the drive your operating system is installed on, typically the C drive (C:\).
 
@@ -46,15 +46,15 @@ The below image lists the meaning of each permission on how it applies to a file
 How can you view the permissions for a file or folder?
 
 - Right-click the file or folder you want to check for permissions.
-- From the context menu, select _Properties_.
-- Within Properties, click on the _Security_ tab.
-- In the _Group or user names_ list, select the user, computer, or group whose permissions you want to view.
+- From the context menu, select **Properties**.
+- Within Properties, click on the **Security** tab.
+- In the **Group or user names** list, select the user, computer, or group whose permissions you want to view.
 
-Another feature of NTFS is _Alternate Data Streams ( ADS )_.
+Another feature of NTFS is **Alternate Data Streams ( ADS )**.
 
-_Alternate Data Streams (ADS)_ is a file attribute specific to Windows _NTFS_ (New Technology File System).
+**Alternate Data Streams (ADS)** is a file attribute specific to Windows **NTFS** (New Technology File System).
 
-Every file has at least one data stream (_$DATA_), and ADS allows files to contain more than one stream of data. Natively Window Explorer doesn't display ADS to the user. There are 3rd party executables that can be used to view this data, but Powershell gives you the ability to view ADS for files.
+Every file has at least one data stream (**$DATA**), and ADS allows files to contain more than one stream of data. Natively Window Explorer doesn't display ADS to the user. There are 3rd party executables that can be used to view this data, but Powershell gives you the ability to view ADS for files.
 
 From a security perspective, malware writers have used ADS to hide data.
 
@@ -62,13 +62,13 @@ Not all its uses are malicious. For example, when you download a file from the I
 
 ## 02 - System32 Folders
 
-The Windows folder (_C:\Windows_) is traditionally known as the folder which contains the Windows operating system.
+The Windows folder (**C:\Windows**) is traditionally known as the folder which contains the Windows operating system.
 
 The folder doesn't have to reside in the C drive necessarily. It can reside in any other drive and technically can reside in a different folder.
 
 This is where environment variables, more specifically system environment variables, come into play. Even though not discussed yet, the system environment variable for the Windows directory is **%windir%**.
 
-Per Microsoft , "_Environment variables store information about the operating system environment. This information includes details such as the operating system path, the number of processors used by the operating system, and the location of temporary folders_".
+Per Microsoft , "**Environment variables store information about the operating system environment. This information includes details such as the operating system path, the number of processors used by the operating system, and the location of temporary folders**".
 
 The System32 folder holds the important files that are critical for the operating system.
 
@@ -85,7 +85,7 @@ The user account type will determine what actions the user can perform on that s
 
 You are currently logged in as an Administrator. There are several ways to determine which user accounts exist on the system.
 
-One way is to click the _Start Menu_ and type _Other User_. A shortcut to _System Settings > Other users_ should appear.
+One way is to click the **Start Menu** and type **Other User**. A shortcut to **System Settings > Other users** should appear.
 
 If you click on it, a Settings window should now appear. See below.
 
@@ -115,7 +115,7 @@ Each user profile will have the same folders; a few of them are:
 
 Another way to access this information, and then some, is using Local User and Group Management.
 
-Right-click on the Start Menu and click Run. Type _lusrmgr.msc_
+Right-click on the Start Menu and click Run. Type **lusrmgr.msc**
 
 Note: The Run Dialog Box allows us to open items quickly.
 
